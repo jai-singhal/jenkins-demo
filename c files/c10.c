@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(){
-	printf("Hello World c6\n");
+	printf("Hello World cfiles/c6\n");
 	return 1;
 }
