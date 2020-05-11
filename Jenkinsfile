@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                try{
+                try {
                   sh "runCommit.sh"
                 }
-                finally{
+                finally {
                   echo "Hello Build"
                 }
             }
         }
         stage('Test') {
             steps {
-                try{
+                try {
                   python "runAllfiles.py"
                 }
-                finally{
+                finally {
                   echo "Hello Test"               
                 }
             }
