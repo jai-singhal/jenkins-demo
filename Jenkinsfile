@@ -12,7 +12,7 @@ pipeline {
 		            	'''
 		            	sh "runCommit.sh"
 		            }
-		            except (err) {
+		            catch (err) {
 		            	echo err.getMessage()
 		            	echo "Issue in running runcommit.sh"
 		            	
