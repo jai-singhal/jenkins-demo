@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                python add.py 4 1
+                python runAllfiles.py
             }
         }
         stage('Deploy') {
