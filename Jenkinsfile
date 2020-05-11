@@ -5,11 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh runCommit.sh
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                python add.py 4 1
             }
         }
         stage('Deploy') {
