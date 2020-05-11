@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
                 sh "runCommit.sh"
             }
         }
         stage('Test') {
             steps {
-                python3 "runAllfiles.py"
+                echo "Test stage"
             }
         }
         stage('Deploy') {
