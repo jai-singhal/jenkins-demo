@@ -7,7 +7,6 @@ pipeline {
             	script {
 		            try {
 		            	sh '''
-		            		cd
 		            		ls
 		            	'''
 		            	sh "runCommit.sh"
@@ -26,6 +25,11 @@ pipeline {
 		            try {
 		            	python "runAllfiles.py"
 		            }
+		            catch (err) {
+		            	echo err.getMessage()
+		            	echo "Issue in running runAllfiles.py"
+		            	
+		            }  
 		            finally {
 		            	echo "Hello Test"               
 		            }            	
