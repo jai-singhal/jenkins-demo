@@ -8,8 +8,8 @@ pipeline {
 		            try {
 		            	sh '''
 		            		ls
+		            		sh "runCommit.sh"
 		            	'''
-		            	sh "runCommit.sh"
 		            }
 		            catch (err) {
 		            	echo err.getMessage()
@@ -23,7 +23,9 @@ pipeline {
             steps {
             	script {
 		            try {
-		            	python "runAllfiles.py"
+		            	sh '''
+		            		python "runAllfiles.py"
+		            	'''
 		            }
 		            catch (err) {
 		            	echo err.getMessage()
