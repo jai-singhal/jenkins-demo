@@ -4,13 +4,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                cd
-                sh "runCommit.sh"
+                try{
+                  sh "runCommit.sh"
+                }
+                finally{
+                  echo "Hello Build"
+                }
             }
         }
         stage('Test') {
             steps {
-                echo "Test stage"
+                try{
+                  python "runAllfiles.py"
+                }
+                finally{
+                  echo "Hello Test"               
+                }
             }
         }
         stage('Deploy') {
