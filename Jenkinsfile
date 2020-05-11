@@ -16,10 +16,7 @@ pipeline {
 		            	echo err.getMessage()
 		            	echo "Issue in running runcommit.sh"
 		            	
-		            }
-		            finally {
-		            	echo "Hello Build"
-		            }            	
+		            }          	
             	}
             }
         }
