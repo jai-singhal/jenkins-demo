@@ -5,12 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh "./runCommit.sh"
+                sh "runCommit.sh"
             }
         }
         stage('Test') {
             steps {
-                python3 "./runAllfiles.py"
+                python3 "runAllfiles.py"
             }
         }
         stage('Deploy') {
