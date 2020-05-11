@@ -6,7 +6,16 @@ pipeline {
             steps {
             	script {
 		            try {
+		            	sh '''
+		            		cd
+		            		ls
+		            	'''
 		            	sh "runCommit.sh"
+		            }
+		            except (err) {
+		            	echo err.getMessage()
+		            	echo "Issue in running runcommit.sh"
+		            	
 		            }
 		            finally {
 		            	echo "Hello Build"
