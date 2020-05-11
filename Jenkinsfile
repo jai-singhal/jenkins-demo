@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "./runCommit.sh"
+                cd
+                sh "runCommit.sh"
             }
         }
         stage('Test') {
